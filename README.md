@@ -4,7 +4,7 @@ This is a Python 3 library amis to make the standard module `struct` easier to u
 
 ## Example
 
-```
+```python
 @dataclass
 class ICMPPacket(Packet):
     ttype: uint8
@@ -23,9 +23,9 @@ print(recovered)  # => ICMPPacket(ttype=1, code=2, checksum=3, rest=b'abcd')
 print(packet.serialize(endian=Endian.BIG_ENDIAN))  # => b'\x01\x02\x00\x03abcd'
 ```
 
-**Variant length**
+**Variable length**
 
-```
+```python
 @dataclass
 class TLV(Packet):
     tag: uint8
